@@ -1,0 +1,9 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+    <ul>
+        {% for category in categories %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a> <span>({{ category.products.count }})</span></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -35,3 +35,5 @@ docs/_build/
 /docker/volumes/
 /sources/db.sqlite3
 /sources/var/
+/sources/bower-components/
+/sources/static/
