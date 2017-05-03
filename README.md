@@ -93,3 +93,11 @@ docker-compose run --rm kiwi_web python3 manage.py test
 
 #prodaction
 ###deploy
+
+
+#changelog
+###v0.1 (03/05/2017)
++ init repository
++ start project
++ settings docker-compose
++ add README
