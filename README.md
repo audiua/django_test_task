@@ -2,7 +2,7 @@
 
 This is a test project.
 
-##Install
+## Install
 
 #### .env settings example
 Copy .env.example file to .env and add environment variables
@@ -34,7 +34,7 @@ docker-compose up
 ```
 You should see the running containers
 
-####  manage a database (dev only)
+#### manage a database (dev only)
 + for manage a postresql is running a container with a pgadmin4
 + run in a browser 0.0.0.0:5050
 + add a server with following settings:
@@ -64,12 +64,12 @@ To list all volumes run the command
 ```commandline
 docker volumes ls
 ```
-####for deleting the volume run the command
+#### for deleting the volume run the command
 see https://docs.docker.com/engine/reference/commandline/volume_rm/  
 ```commandline
 docker volume rm volme_name
 ```
-####delete the test task volumes
+#### delete the test task volumes
 ```commandline
 docker volume rm kiwi_postgres kiwi_redis kiwi_pgadmin
 ```
@@ -90,7 +90,7 @@ docker-compose run --rm web python3 manage.py collectstatic
 ```commandline
 docker-compose run --rm web python3 manage.py loaddata data.json
 ```
-#develop
+# develop
 
 ### run tests
 for running tests you should run the command
@@ -98,21 +98,24 @@ for running tests you should run the command
 docker-compose run --rm web python3 manage.py test
 ```
 
-#prodaction
-###deploy
+# prodaction
+### deploy
 
 
-#changelog
+# changelog
+### v0.2.2 (03/05/2017)
++ fix travis file
++ fix *.md files
 
-###v0.2.1 (03/05/2017)
+### v0.2.1 (03/05/2017)
 + add travis file
 + add test fixtures
 
-###v0.2 (03/05/2017)
+### v0.2 (03/05/2017)
 + start product app
 + add bower
 
-###v0.1 (03/05/2017)
+### v0.1 (03/05/2017)
 + init repository
 + start project
 + settings docker-compose
