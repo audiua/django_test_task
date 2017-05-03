@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/audiua/django_test_task.svg?branch=master)](https://travis-ci.org/audiua/django_test_task)
+
 This is a test project.
 
 ##Install
