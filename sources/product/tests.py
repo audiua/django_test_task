@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 
 
 class TestProduct(TestCase):
-    # fixtures = ['data.json']
+    fixtures = ['data.json']
 
     def test_category_view(self):
         categories = Category.objects.all()
