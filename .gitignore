@@ -1,0 +1,37 @@
+__pycache__/
+*.so
+env/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+
+# Sphinx documentation
+docs/_build/
+
+# dotenv
+.env
+
+.idea
+*.db
+.DS_Store
+
+# исключаем данные
+/docker/volumes/
+/sources/db.sqlite3
+/sources/var/
