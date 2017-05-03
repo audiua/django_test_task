@@ -1,3 +1,7 @@
+###v0.2.1 (03/05/2017)
++ add travis file
++ add test fixtures
+
 ###v0.2 (03/05/2017)
 + start product app
 + add bower
