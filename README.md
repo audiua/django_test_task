@@ -57,23 +57,6 @@ You should see the running containers
 Refresh servers, and you will see the local server  
 with the postgres database
 
-#### persist data
-the data persists in the docker volumes.  
-see https://docs.docker.com/compose/compose-file/#volume-configuration-reference.  
-To list all volumes run the command
-```commandline
-docker volumes ls
-```
-#### for deleting the volume run the command
-see https://docs.docker.com/engine/reference/commandline/volume_rm/  
-```commandline
-docker volume rm volme_name
-```
-#### delete the test task volumes
-```commandline
-docker volume rm kiwi_postgres kiwi_redis kiwi_pgadmin
-```
-
 #### run migrations
 For running django migrations you should run the command
 ```commandline
@@ -120,6 +103,23 @@ Enjoy the site :)
 for running tests you should run the command
 ```commandline
 docker-compose run --rm web python3 manage.py  test -s
+```
+
+#### persist data
+the data persists in the docker volumes.  
+see https://docs.docker.com/compose/compose-file/#volume-configuration-reference.  
+To list all volumes run the command
+```commandline
+docker volumes ls
+```
+#### for deleting the volume run the command
+see https://docs.docker.com/engine/reference/commandline/volume_rm/  
+```commandline
+docker volume rm volme_name
+```
+#### delete the test task volumes
+```commandline
+docker volume rm kiwi_postgres kiwi_redis kiwi_pgadmin
 ```
 
 # prodaction
