@@ -1,6 +1,17 @@
 {% extends 'product/base.html' %}
 
+{% load django_bootstrap_breadcrumbs %}
+    {% block breadcrumbs %}
+        {{ block.super }}
+        {% breadcrumb "Pruduct categories" "product:category_list" %}
+        {% breadcrumb ""|add:category.name "product:category_detail" category.slug %}
+        {% breadcrumb ""|add:product.name "product:product_detail" category.slug product.slug %}
+    {% endblock %}
+
 {% block content %}
+
+
+
     id: {{ product.id }}<br>
     name: {{ product.name }}<br>
     created: {{ product.created_at }}<br>
