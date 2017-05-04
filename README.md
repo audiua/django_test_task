@@ -95,7 +95,7 @@ docker-compose run --rm web python3 manage.py loaddata data.json
 ### run tests
 for running tests you should run the command
 ```commandline
-docker-compose run --rm web python3 manage.py test
+docker-compose run --rm web python3 manage.py  test -s
 ```
 
 # prodaction
