@@ -1,3 +1,9 @@
+### v.0.3.1(04/05/2017)
++ add license
++ add loaddata file
++ add prodaction.yml settings
++ fix readme
+
 ### v0.3(04/05/2017)
 + add sitemap
 + add pagination
