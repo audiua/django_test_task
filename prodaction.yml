@@ -1,0 +1,38 @@
+version: '2'
+services:
+    web:
+        restart: always
+        container_name: 'kiwi_web'
+        image: python3.5.local
+        build:
+            context: './sources/.'
+        command: 'python3 manage.py runserver 0.0.0.0:8000'
+        env_file: '.env'
+        volumes:
+           - ./sources/:/code/
+        ports:
+           - "8000:8000"
+        depends_on:
+           - redis
+           - postgres
+    redis:
+        restart: always
+        container_name: 'kiwi_redis'
+        image: 'redis:3.2.0'
+        env_file: '.env'
+        ports:
+          - '127.0.0.1:6379:6379'
+        volumes:
+          - 'kiwi_redis:/data'
+    postgres:
+        restart: always
+        container_name: 'kiwi_postgres'
+        image: 'postgres:9.4.11'
+        env_file: '.env'
+        ports:
+          - '127.0.0.1:5432:5432'
+        volumes:
+          - 'kiwi_postgres:/var/lib/postgresql/data/'
+volumes:
+    kiwi_postgres:
+    kiwi_redis:
