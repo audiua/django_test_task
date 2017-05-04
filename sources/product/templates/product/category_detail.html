@@ -1,9 +1,19 @@
 {% extends 'product/base.html' %}
 
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Pruduct categories" "product:category_list" %}
+    {% breadcrumb ""|add:category.name "product:category_detail" category.slug %}
+{% endblock %}
+
 {% block content %}
+
     <h1>{{ category.name }}</h1>
     <p>{{ category.description }}</p>
 
     <h3>products</h3>
     {% include 'product/_product_list.html' %}
+
+    {% include 'product/_pagination.html' with items=products url='product:category_detail' slug=category.slug %}
 {% endblock %}

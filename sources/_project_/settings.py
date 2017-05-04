@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'product',
     'djangobower',
     'django_bootstrap_breadcrumbs',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,16 @@ elif DATABASE == 'postgres':
 else:
     raise RuntimeError('Bad django configuration. Invalid DATABASE type')
 
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+        }
+    }
+
+    CACHE_MIDDLEWARE_SECONDS = 0
+    DEBUG = True
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -149,3 +160,22 @@ BOWER_INSTALLED_APPS = (
     'jquery#2.1',
     'bootstrap#3'
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        # 'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'snowflake',
+    },
+    # 'default': {
+    #     'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    #     # 'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+    #     'LOCATION': os.path.join(BASE_DIR, 'var', 'cache'),
+    #     'TIMEOUT': 60,
+    #     'OPTIONS': {
+    #         'MAX_ENTRIES': 1000
+    #     }
+    # }
+}

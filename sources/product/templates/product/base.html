@@ -57,8 +57,19 @@
                   </div>
                 </nav>
             {% endblock %}
-            
-            {% block content %}{% endblock %}
+
+
+            {% load django_bootstrap_breadcrumbs %}
+                {% block breadcrumbs %}
+                    {% clear_breadcrumbs %}
+                    {% breadcrumb "Home" "product:home" %}
+                {% endblock %}
+
+                {% render_breadcrumbs %}
+
+            {% block content %}
+
+            {% endblock %}
 
         {% endblock %}
     </div>
