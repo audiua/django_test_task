@@ -89,7 +89,7 @@ sudo chown -R $USER:$USER .
 
 #### restart docker-compose
 
-Enjoy the site :)
+Enjoy the site :)  
 http://127.0.0.1:8000 - site  
 http://127.0.0.1:5050 - pgadmin
 
