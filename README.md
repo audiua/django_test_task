@@ -73,11 +73,24 @@ docker volume rm volme_name
 ```commandline
 docker volume rm kiwi_postgres kiwi_redis kiwi_pgadmin
 ```
+
 #### run migrations
 For running django migrations you should run the command
 ```commandline
 docker-compose run --rm web python3 manage.py migrate
 ```
+
+#### start with init data
+if you want to start with init data  
+Please leaddata from data.json file in the root directory
+```commandline
+docker-compose run --rm web python3 manage.py loaddata data.json
+```
+###### There are init data:
++ admin:qwerty123
++ couple categories an products  
+
+
 #### install bower requirements
 ```commandline
 docker-compose run --rm web python3 manage.py bower_install --allow-root
@@ -86,10 +99,21 @@ docker-compose run --rm web python3 manage.py bower_install --allow-root
 ```commandline
 docker-compose run --rm web python3 manage.py collectstatic
 ```
-#### loaddata
+If you will see errors with permissions denied, run the command in the project root directory
 ```commandline
-docker-compose run --rm web python3 manage.py loaddata data.json
+sudo chown -R $USER:$USER .
 ```
+
+#### restart docker-compose
+type Ctrl + C in sheel 
+
+and then
+```commandline
+docker-compose up
+```
+
+Enjoy the site :)
+
 # develop
 
 ### run tests
@@ -99,10 +123,16 @@ docker-compose run --rm web python3 manage.py  test -s
 ```
 
 # prodaction
-### deploy
-
+You can run docker-compose with prodaction.yml file
+You can change local settings in .env file
 
 # changelog
+
+### v.0.3.1(04/05/2017)
++ add license
++ add loaddata file
++ add prodaction.yml settings
++ fix readme
 
 ### v0.3(04/05/2017)
 + add sitemap
