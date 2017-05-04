@@ -1,3 +1,9 @@
+### v0.3(04/05/2017)
++ add sitemap
++ add pagination
++ add breadcrumbs
++ add tests
+
 ### v0.2.2 (03/05/2017)
 + fix travis file
 + fix *.md files

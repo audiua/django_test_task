@@ -1,7 +1,17 @@
 {% extends 'product/base.html' %}
 
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Recent pruducts" "product:recent_products" %}
+{% endblock %}
+
 {% block content %}
+
     <h1>Recent products</h1>
 
     {% include 'product/_product_list.html' %}
+
+    {% include 'product/_pagination.html' with items=products url='product:recent_products' %}
+
 {% endblock %}

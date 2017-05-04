@@ -1,0 +1,19 @@
+<div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous and items.previous_page_number > 1 %}
+            <a href="?page={{ items.previous_page_number }}">previous</a>
+        {% elif items.previous_page_number == 1 and slug %}
+            <a href="{% url url slug %}">previous</a>
+        {% elif items.previous_page_number == 1 %}
+            <a href="{% url url %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ items.number }} of {{ items.paginator.num_pages }}.
+        </span>
+
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
