@@ -88,13 +88,6 @@ sudo chown -R $USER:$USER .
 ```
 
 #### restart docker-compose
-type Ctrl + C in sheel 
-
-and then
-```commandline
-docker-compose up
-```
-
 Enjoy the site :)
 
 # develop
