@@ -32,7 +32,7 @@ class TestApp(TestCase):
         response = self.client.get(reverse('product:category_list'))
         self.assertEquals(response.status_code, 200)
         self.assertQuerysetEqual(
-            response.context['categories'],
+            response.context['object_list'],
             ['<Category: Category 1>', '<Category: Category 2>']
         )
 
