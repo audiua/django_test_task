@@ -21,5 +21,5 @@ class TestProduct(TestCase):
         client = Client()
         for product in products:
             response = client.get(reverse('product:product_detail', kwargs={'category_slug': product.category.slug,
-                                                                          'product_slug': product.slug}))
+                                                                          'slug': product.slug}))
             self.assertEqual(response.status_code, 200)

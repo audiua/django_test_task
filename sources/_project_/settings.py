@@ -28,11 +28,11 @@ POSTGRES_HOST = os.environ.get('DB_SERVICE', 'postgres')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'true').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 LOGIN_REDIRECT_URL = '/products/'
+LOGIN_URL = '/login'
 LOGOUT_REDIRECT_URL = '/'
-
 
 # Application definition
 

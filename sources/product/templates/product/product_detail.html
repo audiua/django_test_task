@@ -4,8 +4,8 @@
     {% block breadcrumbs %}
         {{ block.super }}
         {% breadcrumb "Pruduct categories" "product:category_list" %}
-        {% breadcrumb ""|add:category.name "product:category_detail" category.slug %}
-        {% breadcrumb ""|add:product.name "product:product_detail" category.slug product.slug %}
+        {% breadcrumb ""|add:product.category.name "product:category_detail" product.category.slug %}
+        {% breadcrumb ""|add:product.name "product:product_detail" product.category.slug product.slug %}
     {% endblock %}
 
 {% block content %}

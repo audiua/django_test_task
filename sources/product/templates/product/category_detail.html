@@ -13,7 +13,7 @@
     <p>{{ category.description }}</p>
 
     <h3>products</h3>
-    {% include 'product/_product_list.html' %}
+    {% include 'product/_product_list.html' with products=category.products.all %}
 
-    {% include 'product/_pagination.html' with items=products url='product:category_detail' slug=category.slug %}
+    {% include 'product/_pagination.html' with items=category.products url='product:category_detail' slug=category.slug %}
 {% endblock %}

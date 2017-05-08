@@ -1,3 +1,10 @@
+### v0.4(08/05/2017)
++ add Class Based View
++ remove function based view
++ fix tests
++ fix templates
++ add redis
+
 ### v0.3(04/05/2017)
 + add sitemap
 + add pagination
